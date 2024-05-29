@@ -13,7 +13,7 @@
     cols="12"
     md="4"
     align-self="start">
-    <v-sheet class="pa-5 ma-5">
+    <v-sheet class="pa-5 ma-5 ml-14">
       <h2 class="titleColor">{{ data.title }}</h2>
       <v-list color="black">
         <v-list-item
