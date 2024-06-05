@@ -26,10 +26,12 @@ export default defineConfig({
     Components(),
     ViteFonts({
       google: {
-        families: [{
-          name: 'Roboto',
+        families: [
+        {
+          name:'Montserrat',
           styles: 'wght@100;300;400;500;700;900',
-        }],
+        }  
+      ],
       },
     }),
   ],

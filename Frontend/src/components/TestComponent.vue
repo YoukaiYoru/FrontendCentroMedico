@@ -13,15 +13,15 @@
          >
          <v-card
             class="ma-auto h-100 w-100"
-            max-width="344"
+            max-width="350"
             outlined
             color= "rgba(255, 255, 255, 0.8)"
          >
-            <v-card-title class="text-center">
+            <v-card-title class="text-center mx-auto">
                <v-card class="rounded-circle mx-auto text-center my-5 cardId">{{ card.id }}</v-card>
-               <span class="ma-5 font-weight-bold ">{{ card.title }}</span>
+               <span class="pa-5 font-weigth-regular">{{ card.title }}</span>
             </v-card-title>
-            <v-card-text text-center class="pa-5 px-7">{{ card.description }}</v-card-text>
+            <v-card-text class="pa-5 px-7 text-center">{{ card.description }}</v-card-text>
          </v-card>
          </v-col>
       </v-row>

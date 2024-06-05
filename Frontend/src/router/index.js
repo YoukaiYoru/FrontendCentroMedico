@@ -20,6 +20,11 @@ const routes = [
     name: 'login',
     component: () => import('@/pages/loginPage.vue'),
   },
+  {
+    path: '/horarios',
+    name: 'horarios',
+    component: () => import('@/pages/horariosPage.vue'),
+  }
 ]
 
 const router = createRouter({
