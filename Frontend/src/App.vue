@@ -18,9 +18,13 @@
 </script>
 
 <style>
-  .body {
-    background-color: #f5f5f5;
-  }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.body{
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+}
 
 .v-enter-active,
 .v-leave-active {

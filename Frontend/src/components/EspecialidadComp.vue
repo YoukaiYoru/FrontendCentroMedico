@@ -10,8 +10,8 @@
             <v-card class="my-2 pa-2" elevation="5">
                <v-row no-gutters justify="center">
                   <v-col cols="7">
-                     <v-card-title class="text-h6 font-weight-bold">{{ especialidad.nombre }}</v-card-title>
-                     <v-card-text>{{ especialidad.doctor }}</v-card-text>
+                     <v-card-title class="text-h6 font-weight-bold ">{{ especialidad.nombre }}</v-card-title>
+                     <v-card-text class="font-weight-bold">{{ especialidad.doctor }}</v-card-text>
                   </v-col>
                   <v-col align-self="center">
                      <v-btn class="btnVerHorario text-capitalize" rounded="xl"> Ver horario</v-btn>
@@ -45,7 +45,13 @@ const especialidades = ref([
 ])
 </script>
 
-<style>
+<style scoped>
+.v-card-title {
+   color: #E1C48C;
+}
+
+
+
 .v-btn.btnVerHorario {
    font-family: "Montserrat", sans-serif;
    font-weight: 700;

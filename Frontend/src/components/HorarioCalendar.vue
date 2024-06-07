@@ -8,14 +8,14 @@
          </div>
       </v-card-text>
       <v-card-actions class="pa-0 ma-2" align="center">
-         <v-btn class="agenda-class mx-auto" align-content="center" size="x-large" rounded="xl">
+         <v-btn class="agenda-class mx-auto my-5 text-h5 w-25" align-content="center" size="x-large" rounded="xl">
             Agenda tu cita
          </v-btn>
       </v-card-actions>
    </v-sheet>
 </template>
 
-<style>
+<style scoped>
 .sheet-bg{
    background: url("@/assets/svg.png") no-repeat center center;
    background-size:cover;
@@ -40,7 +40,7 @@
 }
 
 .v-card-title.title-horario{
-   font-family: Montserrat;
+   font-family: 'Montserrat', sans-serif;
    font-size: 50px;
    font-weight: 900;
    line-height: 60.95px;
@@ -49,7 +49,7 @@
 
 }
 .v-card-subtitle.subtitle-horario{
-   font-family: Montserrat;
+   font-family: 'Montserrat', sans-serif;
    font-size: 24px;
    font-weight: 400;
    line-height: 29.26px;

@@ -3,21 +3,32 @@
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title class="titleBar">Centro Médico UNI</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn variant="text" to="/" class="txtBtnNav" @click="scrollToTop">Inicio</v-btn>
-      <v-btn variant="text" to="/test" class="txtBtnNav" @click="scrollToTop">Test</v-btn>
-      <v-btn variant="text" to="/horarios" class="txtBtnNav" @click="scrollToTop">Horarios</v-btn>
-      <v-btn rounded="xl" size="large" class="ma-3 btnColor" @click="$router.push('/login')" >Iniciar Sesión</v-btn>
-   </v-app-bar>
-</template>
+      <v-btn to="/" class="txtBtnNav" @click="scrollToTop('/')">Inicio</v-btn>
+      <v-btn to="/test" class="txtBtnNav" @click="scrollToTop('/test')">Test</v-btn>
+      <v-btn to="/horarios" class="txtBtnNav" @click="scrollToTop('/horarios')">Horarios</v-btn>
+      <v-btn rounded="xl" size="large" class="ma-3 btnColor" @click="$router.push('/login')">Iniciar Sesión</v-btn>
+      </v-app-bar>
+      </template>
 
-<script setup>
+      <script setup>
+      import { useRoute } from 'vue-router';
+      const $route = useRoute(); 
+      const scrollToTop = (route) => {
 
-const scrollToTop = () => {
-   window.scrollTo({
-      top: 0,
-   });
-};
-</script>
+         if ($route.path === route) {
+            window.scrollTo({ 
+               top: 0,
+               behavior: 'smooth'
+            });
+         } else {
+            window.scrollTo(
+               {top:0,}
+            );
+         }
+      };
+      </script>
+
+
 
 <style scoped>
 .v-btn[to] {

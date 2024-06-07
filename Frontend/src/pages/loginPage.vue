@@ -15,10 +15,6 @@
 .BgImg {
    width: 1440px;
    height: 1024px;
-   /* top: -159px;
-    left: 831px;
-    gap: 0px;
-    opacity: 0px; */
 }
 
 </style>

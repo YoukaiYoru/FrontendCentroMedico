@@ -24,6 +24,11 @@ const routes = [
     path: '/horarios',
     name: 'horarios',
     component: () => import('@/pages/horariosPage.vue'),
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('@/pages/profilePage.vue'),
   }
 ]
 
