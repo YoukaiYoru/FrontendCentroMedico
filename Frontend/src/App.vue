@@ -4,9 +4,11 @@
     <NavBar />
     </v-toolbar>
     <v-main>
-      <transition>
-        <router-view class="ma-auto"></router-view>
-      </transition>
+        <router-view class="ma-auto" v-slot="{ Component }">
+          <Transition>
+            <component :is="Component" />
+          </Transition>
+        </router-view>
       <AppFooter v-if="$route.path !== '/login'" />
     </v-main>
   </v-app>
@@ -34,6 +36,5 @@
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-}
-
+  }
 </style>

@@ -1,5 +1,15 @@
 <template>
    <v-div>
+   <DialogConfirmation 
+   v-if="showFirstDialog"  
+   @open-confimation-dialog="openConfirmationDialog" 
+   @close-dialog="closeDialog"
+   transition="fade-transition"
+   />
+   <DialogComplete 
+   v-if="showSecondDialog" 
+   @close-all-dialogs="closeAllDialogs"
+   transition="fade-transition"/>
    <v-row class="justify-center">
    <v-col cols="10" class="my-8">
    <v-card class="mx-16 pa-5 elevation-5" >
@@ -42,6 +52,7 @@
                         :iconColor="cita.isAv"
                         :cita="cita.cita"
                         class="ma-5 elevation-5"
+                        @cancelarCita="openFirstDialog"
                      />
                </v-col>
             </v-sheet>
@@ -94,6 +105,27 @@
 import CitaCard from '@/components/CitaCard.vue';
 import UsuarioInfo from '@/components/UsuarioInfo.vue';
 import { ref } from 'vue';
+
+const showFirstDialog = ref(false);
+const showSecondDialog = ref(false);
+
+function openFirstDialog() {
+   showFirstDialog.value = true;
+}
+
+function openConfirmationDialog() {
+   showFirstDialog.value = false;
+   showSecondDialog.value = true;
+}
+
+function closeAllDialogs() {
+   showFirstDialog.value = false;
+   showSecondDialog.value = false;
+   
+}
+function closeDialog() {
+  showFirstDialog.value = false;
+}
 
 const userinfo = ref({
    name: 'Juan',
