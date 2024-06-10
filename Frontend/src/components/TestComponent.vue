@@ -26,13 +26,14 @@
          </v-col>
       </v-row>
       <v-card-actions class="d-flex justify-center ma-8">
-         <v-btn rounded="xl" size="x-large" class="my-5 pa-2 btnColor">Comenzar test</v-btn>
+         <v-btn rounded="xl" size="x-large" class="my-5 pa-2 btnColor" @click="scrollToTopAndRedirect('/test')">Comenzar test</v-btn>
       </v-card-actions>
    </v-card>
 </template>
 
 <script lang="js" setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const advantagesCards = ref([
    {
@@ -51,6 +52,14 @@ const advantagesCards = ref([
    description: 'Especialidad médica que se encarga del estudio de la estructura y función de la piel, así como de las enfermedades que la afectan, su diagnóstico, prevención y tratamiento.',
    },
 ])
+
+
+const router = useRouter()
+
+const scrollToTopAndRedirect = (path) => {
+   window.scrollTo(0, 0)
+   router.push(path)
+}
 </script>
 
 <style scoped>

@@ -1,5 +1,6 @@
 <template>
    <v-div>
+   <!--Dialogs -->
    <DialogConfirmation 
    v-if="showFirstDialog"  
    @open-confimation-dialog="openConfirmationDialog" 
@@ -12,8 +13,11 @@
    transition="fade-transition"/>
    <v-row class="justify-center">
    <v-col cols="10" class="my-8">
+      <!--Principal-->
    <v-card class="mx-16 pa-5 elevation-5" >
       <v-row class="justify-center fill-height">
+
+         <!-- Información del usuario -->
          <v-col>
             <UsuarioInfo
             :UsrName="userinfo.name"
@@ -25,6 +29,9 @@
             :UsrImg="userinfo.img"
             />
          </v-col>
+
+
+         <!-- Próximas citas -->
          <v-col class="pa-0 py-3">
             <v-card-title class="font-weight-black text-h5 color-title">
             Próximas citas
@@ -57,6 +64,8 @@
                </v-col>
             </v-sheet>
          </v-col>
+
+         <!-- Historial de citas  -->
          <v-col class="pa-0 py-3">
             <v-card-title class="font-weight-black text-h5 color-title">
             Historial de citas

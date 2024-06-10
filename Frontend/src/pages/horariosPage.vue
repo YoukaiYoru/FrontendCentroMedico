@@ -1,7 +1,7 @@
 <template>
    <div>
       <v-row no-gutters>
-      <HorarioCalendar class="w-100"/>
+         <HorarioCalendar class="w-100"/>
       </v-row>
       <v-row>
          <v-col cols="7">

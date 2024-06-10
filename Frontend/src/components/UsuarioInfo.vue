@@ -31,7 +31,6 @@
 </style>
 
 <script setup>
-import { defineProps } from 'vue';
 
 defineProps(['UsrName', 'UsrLastname', 'UsrEmail', 'UsrPhone', 'UsrCountry', 'UsrCity', 'UsrImg']);
 

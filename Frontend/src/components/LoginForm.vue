@@ -3,14 +3,20 @@
          <v-container class="ma-auto">
          <v-row align="center">
             <v-col align-self="center" class="pa-2 ma-2">
-                  <v-form class="text-start pa-8 mx-auto ">
+                  <v-form 
+                  class="text-start pa-8 mx-auto"
+                  @submit.prevent="handleSubmit">
                      <v-img src="@/assets/centroMedicoIcon.png" class="LogoCentro"></v-img>
                      <v-card-text class="textLogin">Código UNI</v-card-text>
-                     <v-text-field hide-details="auto" v-model="username" variant="solo" label="Ingrese su código UNI"></v-text-field>
+                     <v-text-field 
+                     hide-details="auto" 
+                     v-model="username" 
+                     variant="solo" 
+                     label="Ingrese su código UNI"></v-text-field>
                      <v-card-text class="textLogin">Contraseña</v-card-text>
                      <v-text-field v-model="password" variant="solo" label="Ingrese su contraseña" type="password"></v-text-field>
                      <v-row class="ma-2 w-100 h-100" align="center" align-content="space-between" justify="center">
-                        <v-btn @click="login" class="btnColor mx-2" align="center" rounded="xl" size="large">Iniciar sesión</v-btn>
+                        <v-btn type="submit" class="btnColor mx-2" align="center" rounded="xl" size="large">Iniciar sesión</v-btn>
                         <v-btn to="/" rounded="xl" variant="outlined" align="center" class="mx-2">Regresar</v-btn>
                      </v-row>
                   </v-form>
@@ -40,13 +46,23 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import validUsers from '@/components/variablesJSON/Usuarios.json';
 const username = ref('');
 const password = ref('');
+const router = useRouter();
+const handleSubmit = () => {
+   const user = validUsers.find(
+      (u) => u.username === username.value && u.password === password.value
+   );
 
-const login = () => {
-   console.log(username.value, password.value);
-}
-
+   if (user) {
+      localStorage.setItem('user', JSON.stringify(user)); // Guarda el usuario en el almacenamiento local
+      router.push('/'); // Redirige a la página de inicio
+   } else {
+      alert('Usuario o contraseña incorrectos');
+   }
+};
 
 const ContactanosData =ref(
    {title: 'Contáctanos',

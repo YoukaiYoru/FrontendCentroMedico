@@ -15,7 +15,7 @@
             <v-btn class="btnAgendar" 
             block
             v-if="showButton"
-            @click ="$emit('cancelar-cita')"
+            @click ="$emit('cancelarCita')"
             >Cancelar cita</v-btn>
             </v-row>
          </v-card>
@@ -35,7 +35,7 @@
 
 import { computed } from 'vue';
 
-defineEmits(['cancelar-cita']);
+defineEmits(['cancelarCita']);
 
 const props = defineProps(['day', 'category', 'DoctorName','iconColor','hour','cita']);
 
