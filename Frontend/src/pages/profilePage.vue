@@ -20,6 +20,7 @@
          <!-- Información del usuario -->
          <v-col>
             <UsuarioInfo
+            :rol="userinfo.rol" 
             :UsrName="userinfo.name"
             :UsrLastname="userinfo.lastname"
             :UsrEmail="userinfo.email"
@@ -137,6 +138,7 @@ function closeDialog() {
 }
 
 const userinfo = ref({
+   rol:'Alumno',
    name: 'Juan',
    lastname: 'Perez',
    img: "./src/assets/profile.png",

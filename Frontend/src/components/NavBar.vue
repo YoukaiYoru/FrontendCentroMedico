@@ -8,9 +8,14 @@
       <v-btn to="/horarios" class="txtBtnNav" @click="scrollToTop('/horarios')" exact >Horarios</v-btn>
 
       <!--Si está logeado-->
-      <v-btn v-if="user" to="/horarios" class="txtBtnNav">
+      <v-btn v-if="rol == 'user'" to="/horarios" class="txtBtnNav">
          Agendar cita
       </v-btn>
+
+      <v-btn v-if="rol == 'admin'" to="/horarios" class="txtBtnNav">
+         Editar horarios
+      </v-btn>
+      
 
       <!--Menu from avatar-->
       <v-menu v-if="user" size="32">
@@ -49,19 +54,17 @@
       const router = useRouter();
       const $route = useRoute(); 
       const user = ref(JSON.parse(localStorage.getItem('user')));
+      const rol = ref(user.value?.rol);
       const scrollToTop = (route) => {
-
-         if ($route.path === route) {
-            window.scrollTo({ 
-               top: 0,
-               behavior: 'smooth'
-            });
-         } else {
-            window.scrollTo(
-               {top:0,behavior: 'smooth'}
-            );
-         }
-      };
+      if ($route.path === route) {
+         window.scrollTo({ 
+            top: 0,
+            behavior: 'smooth'
+         });
+      } else {
+         window.scrollTo({top:0,behavior: 'smooth'});
+      }
+   };
 
 
       const logout = () => {
@@ -71,10 +74,22 @@
       };
 
       const toProfile = () => {
-         router.push('/profile');
-         window.scrollTo(
+         if(rol.value == 'user'){
+            router.push('/profile');
+            window.scrollTo(
                {top:0,behavior: 'smooth'}
             );
+         }else if(rol.value == 'admin'){
+            router.push('/adminProfile');
+            window.scrollTo(
+               {top:0,behavior: 'smooth'}
+            );
+         }else{
+            router.push('/doctorProfile');
+            window.scrollTo(
+               {top:0,behavior: 'smooth'}
+            );
+         }
       };
    </script>
 

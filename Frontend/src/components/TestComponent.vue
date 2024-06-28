@@ -1,8 +1,8 @@
 <template>
-   <v-card flat color="white" class="pa-8 rounded-0 align-items-center" width="100%" height="100%" image="@/assets/svg.png" > 
+   <v-card flat color="white" class="pa-8 rounded-0 align-items-center elevation-0" width="100%" height="100%" image="@/assets/svg.png" > 
       <div class="ma-5">
          <v-card-title class="textTitle text-center">Test de Prevención de la Salud</v-card-title>
-         <v-card-subtitle class=" textSubTitle  text-center ma-5 ">Gratis | Sin registro previo | Rápido y accesible</v-card-subtitle>
+         <v-card-subtitle class="text-h5 text-center ma-5 ">Gratis | Sin registro previo | Rápido y accesible</v-card-subtitle>
       </div>
       <v-row class="ma-8 my-14" no-gutters>
          <v-col
@@ -18,10 +18,9 @@
             color= "rgba(255, 255, 255, 0.8)"
          >
             <v-card-title class="text-center mx-auto">
-               <v-card class="rounded-circle mx-auto text-center my-5 cardId">{{ card.id }}</v-card>
-               <span class="pa-5 font-weigth-regular">{{ card.title }}</span>
+               <v-card class="rounded-circle mx-auto text-center my-3 cardId">{{ card.id }}</v-card>
             </v-card-title>
-            <v-card-text class="pa-5 px-7 text-center">{{ card.description }}</v-card-text>
+            <v-card-text class="pa-3 px-7 text-center">{{ card.description }}</v-card-text>
          </v-card>
          </v-col>
       </v-row>

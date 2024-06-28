@@ -47,6 +47,6 @@ const dialog = ref(true);
 const emit = defineEmits(['close-all-dialogs']);
 
 function closeAllDialogs() {
-  emit('close-all-dialogs');
+   emit('close-all-dialogs');
 }
 </script>
